@@ -8,7 +8,7 @@ this vulnerability is reported to OpenVpn.
 successfully exploiting this vulnerability can help attacker to bypass driver singing enforcement in windows and Load Unsigned malicious Driver.
 ****
 OpenVpn Tap Driver use  NdisReadConfiguration for reading  some Configuration from Registry.
-one of the obvious task before using any function, is you must read it manual 
+one of the obvious task before using any function, is you must read it's manual 
 
 [NdisReadConfiguration manual](https://msdn.microsoft.com/en-us/library/windows/hardware/ff564511(v=vs.85).aspx )
 
