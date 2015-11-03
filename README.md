@@ -45,7 +45,8 @@ key 00XX is something like 0012,
 Then it copy this string to alocated Pool,without properley cheking  the size of string.
 
 so if we change NetCfgInstanceId just before driver call  NdisReadConfiguration, We Write a string more than size of the Buffer in allocated Pool.
-good news is this Pool is MiniportAdapterContext and i think we can overwrite something interesting to get code execution in Ring0 or just overwrite pool metadata
+
+good news is this Pool point to  "MiniportAdapterContext" buffer  and i think we can overwrite something interesting to get code execution in Ring0 or just overwrite pool metadata
 
 ```
 a773b1fa 6a02            push    2
