@@ -30,7 +30,11 @@ else
   memcpy((void *)(v1 + 40), v2->ParameterData.StringData.Buffer, v4);
 ```
 
-tap0901.sys read some config string from NetCfgInstanceId Value under "\REGISTRY\MACHINE\SYSTEM\CONTROLSET001\CONTROL\CLASS\{4D36E972-E325-11CE-BFC1-08002BE10318}\00XX" key(00XX is something like 0012),
+tap0901.sys read some config string from NetCfgInstanceId Value under
+```
+"\REGISTRY\MACHINE\SYSTEM\CONTROLSET001\CONTROL\CLASS\{4D36E972-E325-11CE-BFC1-08002BE10318}\00XX"
+```
+key(00XX is something like 0012),
 Then it copy this string to alocated Pool,without properley cheking  the size of string.
 
 so if we change NetCfgInstanceId just before driver call  NdisReadConfiguration, We Write a string more than size of the Buffer in allocated Pool.
