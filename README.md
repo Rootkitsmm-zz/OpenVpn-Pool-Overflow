@@ -76,7 +76,7 @@ a773b23c e8092b0000      call    tap0901+0x3d4a (a773dd4a) ; memcpy
 ```
 
 eax is Destination pool pointer ,edx is size of copy
-as you see pool size is 538 and it was less than number of byte we write to it 
+as you see pool size is 538 and it was less than number of bytes we write to it 
 ```
 3: kd> r
 eax=83b45af8 ebx=00000000 ecx=83a8c7c4 edx=0000ffff esi=83b45ad0 edi=898ac5c9
