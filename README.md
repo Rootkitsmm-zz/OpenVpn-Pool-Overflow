@@ -10,8 +10,8 @@ successful exploiting this vulnerability can help attacker to baypass driver sin
 OpenVpn Tap Driver use  NdisReadConfiguration for reading  some Configuration from Registry.
 one of the obvious task before using any function, is you must read it manual 
 
-NdisReadConfiguration manual:
-https://msdn.microsoft.com/en-us/library/windows/hardware/ff564511(v=vs.85).aspx 
+[NdisReadConfiguration manual](https://msdn.microsoft.com/en-us/library/windows/hardware/ff564511(v=vs.85).aspx )
+
 ```
 Note that NDIS does not validate values that a driver reads from the registry.
 The caller of NdisReadConfiguration must therefore not make any assumptions about 
