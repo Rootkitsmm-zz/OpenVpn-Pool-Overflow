@@ -6,7 +6,10 @@ one of the obvious task before using any function, is you must read it manual
 NdisReadConfiguration manual:
 https://msdn.microsoft.com/en-us/library/windows/hardware/ff564511(v=vs.85).aspx 
 ```
-Note that NDIS does not validate values that a driver reads from the registry. The caller of NdisReadConfiguration must therefore not make any assumptions about such values and must validate each value read from the registry. If the caller determines that a value is out of bounds, it should use a default value instead.
+Note that NDIS does not validate values that a driver reads from the registry.
+The caller of NdisReadConfiguration must therefore not make any assumptions about 
+such values and must validate each value read from the registry.If the caller 
+determines that a value is out of bounds, it should use a default value instead.
 ```
 tap0901.sys (IDA-Pro output ) :
 
@@ -55,7 +58,7 @@ a773b229 0fb75620        movzx   edx,word ptr [esi+20h]
 a773b22d 66894622        mov     word ptr [esi+22h],ax
 a773b231 8d4628          lea     eax,[esi+28h]
 a773b234 52              push    edx ; size of buffer
-a773b235 894624          mov     dword ptr [esi+24h],eax ; soure memory  
+a773b235 894624          mov     dword ptr [esi+24h],eax ; source memory  
 a773b238 ff7108          push    dword ptr [ecx+8]
 a773b23b 50              push    eax ; Destination memory 
 a773b23c e8092b0000      call    tap0901+0x3d4a (a773dd4a) ; memcpy
@@ -81,9 +84,8 @@ Pool page 83b45af8 region is Nonpaged pool
 ```
 
 
-usefull breakPoints and outputs
-
-NdisReadConfiguration lead to RtlQueryRegistryValues function 
+Usefull Breakpoints and outputs.
+NdisReadConfiguration lead to RtlQueryRegistryValues function.
 
 ```
 2: kd> !handle 800009e0 
@@ -107,7 +109,7 @@ nt!RtlQueryRegistryValues+0x26d:
 
 ```
 
-And BSOD output :
+ BSOD output :
 
 ```
 DRIVER_IRQL_NOT_LESS_OR_EQUAL (d1)
