@@ -3,10 +3,10 @@ credit to
 
 https://twitter.com/R00tkitSMM (firozimaysam@gmail.com) telegram username : https://telegram.me/firozi
 
+this vulnerability is reported to OpenVpn.
 ****
 successful exploiting this vulnerability can help attacker to baypass driver singing enforcement in windows and Load Unsigned malicious Driver.
 ****
-
 OpenVpn Tap Driver use  NdisReadConfiguration for reading  some Configuration from Registry.
 one of the obvious task before using any function, is you must read it manual 
 
