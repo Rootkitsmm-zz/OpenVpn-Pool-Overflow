@@ -1,4 +1,11 @@
 # OpenVpn-Pool-Overflow
+credit to
+
+https://twitter.com/R00tkitSMM (firozimaysam@gmail.com) telegram username : https://telegram.me/firozi
+
+****
+successful exploiting this vulnerability can help attacker to baypass driver singing enforcement in windows and Load Unsigned malicious Driver.
+****
 
 OpenVpn Tap Driver use  NdisReadConfiguration for reading  some Configuration from Registry.
 one of the obvious task before using any function, is you must read it manual 
@@ -34,7 +41,7 @@ tap0901.sys read some config string from NetCfgInstanceId Value under
 ```
 "\REGISTRY\MACHINE\SYSTEM\CONTROLSET001\CONTROL\CLASS\{4D36E972-E325-11CE-BFC1-08002BE10318}\00XX"
 ```
-key(00XX is something like 0012),
+key 00XX is something like 0012,
 Then it copy this string to alocated Pool,without properley cheking  the size of string.
 
 so if we change NetCfgInstanceId just before driver call  NdisReadConfiguration, We Write a string more than size of the Buffer in allocated Pool.
